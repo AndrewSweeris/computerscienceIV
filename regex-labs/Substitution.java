@@ -1,7 +1,7 @@
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Andrew Sweeris
+//Date - 2022/08/2022
+//Class - PB MAD COMP SCI K
+//Lab  - Regex Lab 03
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,12 +19,13 @@ public class Substitution
 		Matcher m = p.matcher(orig);
 
 		boolean b = true;
+		String s = "";
 		while (m.find()) {
-			sb.append("\"masked\": " + m.group() + "\n");
-			m.appendReplacement(new StringBuffer(m.group()), "\"masked\"");
+			s = s + "\"masked\": " + m.group() + "\n";
+			m.appendReplacement(sb, "\"masked\"");
 		}
 		m.appendTail(sb);
-		System.out.println(sb.toString());
+		System.out.println(s + sb.toString());
 	}
 	public static void main(String[] args){
 		new Substitution();
